@@ -436,6 +436,31 @@ public final class BottomSheetView: UIView {
             targetMaxHeight: dismissalDelegate != nil
         )
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent) {
+        contentView.touchesBegan(touches, with: event)
+        super.touchesBegan(touches, with: event)
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        contentView.touchesEnded(touches, with: event)
+        super.touchesEnded(touches, with: event)
+    }
+    
+    override func touchesEstimatedPropertiesUpdated(_ touches: Set<UITouch>) {
+        contentView.touchesEstimatedPropertiesUpdated(touches)
+        super.touchesEstimatedPropertiesUpdated(touches)
+    }
+    
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        contentView.touchesMoved(touches, with: event)
+        super.touchesMoved(touches, with: event)
+    }
+    
+    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+        contentView.touchesCancelled(touches, with: event)
+        super.touchesCancelled(touches, with: event)
+    }
 }
 
 // MARK: - Private types
